@@ -1,0 +1,15 @@
+streamlit
+langchain
+langchain-community
+transformers
+torch
+faiss-cpu
+sentence-transformers
+ipykernel
+python-dotenv
+tqdm
+pdfminer.six
+python-docx
+hf_xet
+huggingface_hub[hf_xet]
+langchain-huggingface
