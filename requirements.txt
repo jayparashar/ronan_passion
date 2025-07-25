@@ -13,3 +13,5 @@ python-docx
 hf_xet
 huggingface_hub[hf_xet]
 langchain-huggingface
+pypdf
+docx2txt
