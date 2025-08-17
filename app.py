@@ -213,10 +213,10 @@ def generate_answer(query, retriever, tokenizer, model):
                 retrieved_sources.append(doc.metadata.get("source", "Unknown Source"))
         context = "\n\n---\n\n".join(cleaned_contents)
     
-    # st.write("### Retrieved Chunks")
-    # for i, doc in enumerate(docs):
-    #     st.markdown(f"**Doc {i+1} Source:** {doc.metadata.get('source', 'Unknown')}")
-    #     st.text(doc.page_content[:500])
+    st.write("### Retrieved Chunks")
+    for i, doc in enumerate(docs):
+        st.markdown(f"**Doc {i+1} Source:** {doc.metadata.get('source', 'Unknown')}")
+        st.text(doc.page_content[:600])
 
     # Step 3: Construct a chat-style prompt suitable for Gemma-7B-It
     messages = []
