@@ -71,9 +71,9 @@ This version has the best user interface, more features, and a cleaner design.
 
 ## Best Practices
 
-- **Use `app_mis1.py` whenever possible:**  
+- **Use `app.py` whenever possible:**  
   It’s the most complete and user-friendly version.
-- **Avoid `app_mistral.py` and `app.py`:**  
+- **Avoid other `app*.py`:**  
   They’re older versions and might not have all the new features or the best interface.
 
 ## Ideas for the Future
