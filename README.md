@@ -90,5 +90,3 @@ This version has the best user interface, more features, and a cleaner design.
 This is a high school-led project to show how modern AI (like RAG, vector databases, and transformer models) can help make school info easier to find and use. Thank you for checking it out!
 
 ---
-
-Let me know if you want this tailored to a specific audience (teachers, students, judges) or need other edits!
