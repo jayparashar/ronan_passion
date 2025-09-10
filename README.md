@@ -1,131 +1,94 @@
-# Katy ISD Chatbot - High School Passion Project 🎓🤖
+# Katy ISD Chatbot – High School Passion Project
 
 ## Project Overview
-This is a GenAI-powered chatbot that answers questions about the Katy ISD website using Retrieval-Augmented Generation (RAG). Built as a high school passion project to demonstrate modern AI capabilities.
+Welcome! This project is a GenAI-powered chatbot designed to help answer questions about the Katy ISD website. It uses Retrieval-Augmented Generation (RAG) to give accurate, document-based answers. I created this as a high school passion project to explore modern AI and make school information more accessible for everyone.
 
-## 🎯 **IMPORTANT: Use `app_mis1.py` for development**
+## Getting Started
 
-**Primary File:** `app_mis1.py` - This is the preferred version with better UI/UX and styling.
+### Use the Right App File
+**Please use `app.py` for all development and running the chatbot!**  
+This version has the best user interface, more features, and a cleaner design.
 
-## File Structure & Comparison
+### Project Structure
 
-### Main Application Files
+- **Main App (`app.py`)**  
+  - Stylish header with colors and borders
+  - Sidebar with the Katy ISD logo, a project description, and example questions
+  - “Clear chat” button
+  - Modern chat interface that’s easy to use (`st.chat_input()`)
+  - Proper file encoding to avoid text issues
+  - Chat history shows up in order
+  - Detailed error handling for a smoother experience
 
-#### ✅ **`app_mis1.py`** - **USE THIS FILE**
-**The preferred, improved version with:**
-- Professional styled header with colored backgrounds and borders
-- Complete sidebar with:
-  - Logo image (`katyisd.jpg`)
-  - About section explaining it's a high school project
-  - Example questions for users
-  - Clear chat button functionality
-- Modern chat interface using `st.chat_input()` (more intuitive)
-- Better file encoding (`utf-8-sig`) for handling BOM
-- Cleaner, more streamlined code structure
-- Chat history displayed in chronological order
-- Enhanced error handling
-
-#### ❌ **`app_mistral.py`** - **DON'T USE**
-**Original version with basic features:**
-- Simple centered title with minimal styling
-- No sidebar - missing user guidance and features
-- Form-based input with `st.form()` and submit button (less user-friendly)
-- Basic file encoding (`utf-8`)
-- Chat history displayed in reverse order (confusing)
-- More verbose code structure
-- Basic error handling
-
-#### ❌ **`app.py`** - **DON'T USE**
-**Incomplete version using Google Gemma model (broken)**
-
-### Key Technical Differences
-
-| Feature | app_mis1.py ✅ | app_mistral.py ❌ |
-|---------|---------------|-------------------|
-| **UI Style** | Professional with styled divs, colors, padding | Basic HTML styling |
-| **Chat Interface** | `st.chat_input()` - modern | `st.form()` with submit button |
-| **Sidebar** | Complete with logo, about, examples, clear button | None |
-| **File Encoding** | `utf-8-sig` (handles BOM better) | `utf-8` (basic) |
-| **Chat Order** | Chronological (intuitive) | Reversed (confusing) |
-| **Code Quality** | Clean, streamlined, ~100 lines | Verbose, ~150 lines |
-| **User Experience** | Professional, guided | Basic, minimal |
-
-## Technical Stack
-- **Model:** Mistral-7B-Instruct-v0.1 (Hugging Face)
-- **Embeddings:** BAAI/bge-base-en-v1.5
+## Tech Stack
+- **AI Model:** Mistral-7B-Instruct-v0.1 (from Hugging Face)
+- **Embeddings Model:** BAAI/bge-base-en-v1.5
 - **Vector Store:** FAISS
-- **Framework:** Streamlit
-- **Document Processing:** LangChain
+- **Frontend:** Streamlit
+- **Document Handling:** LangChain
 
-## Setup Instructions
+## How to Set Up
 
-1. **Install Dependencies:**
+1. **Install Requirements**
+   Navigate (cd) to the folder of where requirements.txt is located.
    ```bash
-   pip install streamlit langchain-community langchain transformers torch faiss-cpu python-dotenv langchain-huggingface
+   pip install -r ./requirements.txt
    ```
 
-2. **Environment Variables:**
-   Create a `.env` file:
-   ```
-   HUGGINGFACE_TOKEN=your_hf_token_here
-   ```
+3. **Set Up Your Environment**
+   - Make a `.env` file in your project folder:
+     ```
+     HUGGINGFACE_TOKEN=your_hf_token_here
+     ```
 
-3. **Document Structure:**
-   ```
-   website_content/
-   ├── documents/          # PDF files go here
-   ├── *.txt              # Text files in root
-   └── *.docx             # Word documents in root
-   ```
+4. **Prepare Your Documents**
+   These files are scrped from the katyisd domain.
+   - Place all PDF files in `website_content/documents/`
+   - Place any `.txt` or `.docx` files in the `website_content/` root directory
 
-4. **Assets:**
-   - `katyisd.jpg` - Logo image for sidebar
+6. **Add the Logo**
+   - Include `katyisd.jpg` for the sidebar logo
 
-5. **Run the Application:**
+7. **Run the Chatbot**
    ```bash
    streamlit run app_mis1.py
    ```
 
-## Features
-- 🎓 Katy ISD-specific knowledge base
-- 🤖 AI-powered question answering with context
-- 📚 Multi-format document support (PDF, TXT, DOCX)
-- 💾 Persistent FAISS vector store with metadata caching
-- 🎨 Professional UI with styled components
-- 📋 Sidebar with user guidance and examples
-- 💬 Modern chat interface with chronological history
-- 🧠 Retrieval-Augmented Generation (RAG) for accurate responses
-- ⚡ GPU acceleration when available
-- 🔍 Source document tracking for transparency
+## What Can It Do?
+- Answers questions specifically about Katy ISD, using real documents
+- Supports PDF, TXT, and DOCX files
+- Keeps a persistent vector store for fast, accurate answers
+- Attractive, student-friendly UI with a sidebar for guidance and examples
+- Tracks which documents are being used as sources
+- Uses GPU acceleration if available for faster answers
 
-## Development Notes
-- Vector store automatically rebuilds if embedder model changes
-- Uses proper Mistral prompt formatting with `[INST]` tags
-- Implements document chunking (1000 chars, 150 overlap)
-- Retrieves top 10 most relevant chunks per query
-- Temperature set to 0.7 for balanced creativity/accuracy
-- Max 512 new tokens per response
+## Developer Notes
+- The vector store will update itself if you swap out the embedding model
+- Prompts are formatted for Mistral with `[INST]` tags
+- Documents are chunked for better searching (1000 characters with 150-character overlap)
+- Retrieves the 10 most relevant chunks for each question
+- Response creativity is balanced (temperature: 0.7), up to 512 tokens per answer
 
-## File Usage Guidelines
+## Best Practices
 
-**✅ DO:** Work exclusively with `app_mis1.py`
-- Better user experience
-- Professional appearance
-- More maintainable code
-- Enhanced functionality
+- **Use `app_mis1.py` whenever possible:**  
+  It’s the most complete and user-friendly version.
+- **Avoid `app_mistral.py` and `app.py`:**  
+  They’re older versions and might not have all the new features or the best interface.
 
-**❌ DON'T:** Use `app_mistral.py` or `app.py`
-- Outdated interfaces
-- Missing features
-- Less polished UX
-
-## Future Improvements
-- [ ] Add clickable citation links to source documents
-- [ ] Implement conversation memory across sessions
-- [ ] Add drag-and-drop file upload functionality
-- [ ] Enhanced error handling with user-friendly messages
-- [ ] Admin panel for document management
-- [ ] Response quality metrics and feedback system
+## Ideas for the Future
+- Clickable citations that link directly to the source document
+- Remember conversations across sessions
+- Drag-and-drop for uploading new files
+- Even friendlier error messages
+- Admin panel for managing documents
+- Ways to rate and give feedback on chatbot answers
 
 ---
-**Note:** This is a high school passion project demonstrating practical applications of modern AI/ML technologies including RAG, vector databases, and transformer models.
+
+**Note:**  
+This is a high school-led project to show how modern AI (like RAG, vector databases, and transformer models) can help make school info easier to find and use. Thank you for checking it out!
+
+---
+
+Let me know if you want this tailored to a specific audience (teachers, students, judges) or need other edits!
