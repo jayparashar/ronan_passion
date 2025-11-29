@@ -17,7 +17,7 @@ Requirements:
 
 Setup:
 1) Install dependencies
-   pip install -r requirements.txt
+   pip install -r requirements.txt or pip install -r ./requirements.txt --ignore-installed
 
 2) Create a .env file in the project root
    HUGGINGFACE_TOKEN=your_hf_token_here
@@ -30,7 +30,7 @@ Setup:
 - Place katyisd.jpg in the project root
 
 5) Run the app
-   streamlit run app.py
+   streamlit run app.py --server.port 10035 --server.address 0.0.0.0
 
 On the first run, the app builds a FAISS index from your documents. Subsequent runs reuse the saved index.
 

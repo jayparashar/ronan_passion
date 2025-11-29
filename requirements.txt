@@ -16,3 +16,4 @@ langchain-huggingface
 pypdf
 docx2txt
 accelerate
+langchain-text-splitters

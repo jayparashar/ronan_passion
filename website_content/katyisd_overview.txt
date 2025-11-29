@@ -1,0 +1,116 @@
+The user wants a detailed, comprehensive overview of Katy Independent School District (Katy ISD) suitable for use as RAG content. This means providing maximum detail, an organized structure, and strictly avoiding non-ASCII characters and icons.
+
+## KATY INDEPENDENT SCHOOL DISTRICT OVERVIEW
+
+Katy Independent School District (Katy ISD or KISD) is a high-growth, academically top-rated public school district located west of the Greater Houston metropolitan area in Texas. It operates across three counties: Harris, Fort Bend, and Waller.
+
+### I. GENERAL AND ADMINISTRATIVE STRUCTURE
+
+**A. Foundation and Scope**
+* **Established:** February 25, 1919.
+* **Geographic Area:** Approximately 181 square miles.
+* **Counties Served:** Harris County, Fort Bend County, and Waller County.
+* **Mission Statement:** Katy Independent School District, the leader in educational excellence, together with family and community, provides unparalleled learning experiences designed to prepare and inspire each student to live an honorable, fulfilling life to create the future.
+* **Vision Statement:** Be the legacy.
+
+**B. Leadership and Governance**
+* **Superintendent:** Ken Gregorski (appointed full superintendent January 14, 2019).
+* **Board of Trustees:** A seven-member board that serves as the policy-making body for the district.
+    * **Term Length:** Three-year staggered terms.
+    * **Election:** Trustees are elected at large by position in May elections.
+    * **Current Board Officers (2025-2026):**
+        * President: Lance Redmon (Position 2, Term Expires 2028)
+        * Vice-President: Rebecca Fox (Position 6, Term Expires 2027)
+        * Secretary: Dawn Champagne (Position 7, Term Expires 2027)
+    * **Other Members (2025-2026):** Morgan Calhoun (Position 4, Term Expires 2026), Mary Ellen Cuzela (Position 5, Term Expires 2026), Amy Thieme (Position 3, Term Expires 2026), James Cross (Position 1, Term Expires 2028).
+
+### II. ENROLLMENT AND GROWTH
+
+**A. Enrollment Data**
+* **Total Enrollment:** Approximately 94,785 students (as of the 2023-2024 school year).
+* **Growth Rate:** KISD is consistently one of the fastest-growing districts in Texas, with projections to exceed 100,000 students soon. Significant growth is concentrated in the northwest quadrant of the district.
+* **Student-Teacher Ratio:** Approximately 14.02 to 1 (2023-2024 data).
+
+**B. Demographics (Approximate Percentages)**
+* Hispanic: 36.5 percent
+* White: 26.8 percent
+* Asian: 17.2 percent
+* Black: 14.5 percent
+* Economically Disadvantaged: 44 percent
+* Limited English Proficiency (LEP): 25.6 percent
+
+### III. CAMPUSES AND FACILITIES
+
+**A. Number of Campuses (Approximate)**
+* Elementary Schools: 45
+* Junior High Schools: 16
+* High Schools: 9
+* Total Schools/Facilities: Approximately 78
+
+**B. Comprehensive High Schools (Grades 9-12)**
+Katy ISD operates nine comprehensive high schools, with a tenth high school currently in planning/construction phase as part of the 2023 Bond.
+1.  Katy High School (KHS)
+2.  Taylor High School (THS)
+3.  Mayde Creek High School (MCHS)
+4.  James E. Taylor High School (JHS)
+5.  Cinco Ranch High School (CRHS)
+6.  Morton Ranch High School (MRHS)
+7.  Seven Lakes High School (SLHS)
+8.  Obra D. Tompkins High School (OTHS)
+9.  Patricia E. Paetow High School (PHS)
+
+**C. Specialized/Alternative Campuses and Centers**
+* **Miller Career & Technology Center (MCTC):** The main hub for Career & Technical Education programs.
+* **Opportunity Awareness Center (OAC):** Discipline alternative education campus (DAEP).
+* **Martha Raines Academy:** Project-based learning campus for credit acceleration.
+* **Legacy Virtual High School:** A forthcoming full-time and part-time virtual high school.
+* **Leonard E. Merrell Center:** District multi-purpose event and performance venue.
+* **Rhodes Stadium:** District athletic stadium.
+* **Gerald Young Agricultural Science Center:** Facility supporting FFA and agricultural programs.
+
+### IV. ACADEMICS AND PROGRAMS
+
+**A. Performance and Ratings**
+* **TEA Rating:** Earned an "A" rating from the Texas Education Agency (TEA) in the 2022 accountability ratings.
+* **College Readiness:** High performance in college preparation metrics, including AP/IB exam participation and passing rates.
+* **Standardized Test Scores (Average):**
+    * SAT: 1087
+    * ACT: 25.3
+* **Graduation Rate:** Approximately 94.9 percent (four-year longitudinal rate).
+
+**B. Graduation Requirements (Foundation High School Program)**
+* Students entering 9th grade are automatically placed on the **Foundation High School Program** (FHSP).
+* The FHSP requires 22-26 credits, depending on the chosen pathway.
+* **Endorsements:** Students must select one of five Endorsements (specialized areas of study) to earn a Distinguished Level of Achievement:
+    1.  STEM (Science, Technology, Engineering, and Mathematics)
+    2.  Business and Industry
+    3.  Public Service
+    4.  Arts and Humanities
+    5.  Multidisciplinary Studies
+* **Testing Requirements:** Students must pass five STAAR End-of-Course (EOC) assessments: Algebra I, English I, English II, Biology, and U.S. History.
+
+**C. Specialized Programs**
+* **Career and Technical Education (CTE):** Robust programs with over 40 distinct pathways (e.g., Health Science, Information Technology, Law and Public Service, STEM).
+* **Advanced Academics:** Includes Advanced Placement (AP), International Baccalaureate (IB, offered at some campuses), Dual Credit courses, and Gifted and Talented (GT) programs.
+* **Texas First Diploma:** A program allowing high-achieving students to graduate early with a Distinguished Level of Achievement, potentially earning a state scholarship to eligible Texas public institutions.
+
+### V. FINANCIAL HEALTH AND GROWTH MANAGEMENT
+
+**A. Financial Rating**
+* **FIRST Rating:** The district has consistently received a Superior Achievement "A" rating from the TEA's School Financial Integrity Rating System of Texas (FIRST).
+
+**B. Bond Programs (2023 Example)**
+Due to continuous rapid growth, the district frequently calls for bond elections to fund new construction, technology, and maintenance.
+* The **November 2023 Bond** saw the passage of two of four propositions, totaling approximately $806.56 million:
+    * **Proposition A (Passed):** $722,992,054 for new schools (including Elementary Schools 47, 48, 49, and Junior High 19), site purchases, renovations/expansions, buses, component replacements, and safety/security upgrades.
+    * **Proposition B (Passed):** $83,567,360 for districtwide classroom and campus technology, including wireless upgrades and devices.
+    * *Propositions C and D (Natatorium Component Replacement and Athletic Facilities/Stadium Repairs) failed.*
+
+**C. Capital Projects:** Bond projects focus heavily on addressing capacity challenges, particularly in the Northwest quadrant of the district, through new campus construction and attendance boundary modifications (ABMs).
+
+### VI. SECURITY AND WELLNESS
+
+* **Katy ISD Police Department:** The district operates its own police department, ensuring dedicated security personnel and School Resource Officers (SROs) on campuses.
+* **Security Measures:** Includes armed security personnel at every campus and a focus on safety and security upgrades funded through bond programs.
+* **Mental Health:** The district provides a Mental Health Intervention Team (MHIT) to offer direct support and resources to students.
+* **Reporting:** An Anonymous Reporting App is utilized to encourage students and community members to report tips regarding safety, bullying, or other concerns.

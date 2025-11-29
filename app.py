@@ -1,4 +1,9 @@
 import os
+
+# Set the cache directory to your 20GB network volume immediately.
+# This must be one of the first lines of code to take effect before other imports.
+os.environ['HF_HOME'] = '/workspace/.cache/huggingface'
+
 import json
 import shutil
 import hashlib
@@ -8,17 +13,20 @@ from dotenv import load_dotenv
 
 import streamlit as st
 from langchain_community.document_loaders import TextLoader, PyPDFLoader, Docx2txtLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
+import re
 
 # ---------- Setup ----------
+
 load_dotenv()
 hf_token = os.getenv("HUGGINGFACE_TOKEN")
 logging.getLogger("pdfminer").setLevel(logging.ERROR)
+
 
 st.set_page_config(page_title="Katy ISD Chatbot", page_icon="🎓", layout="wide")
 
@@ -49,7 +57,7 @@ def load_llm():
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         device_map="auto",
-        torch_dtype=torch.float16,
+        dtype=torch.float16,
         token=hf_token,
     )
     return tokenizer, model
@@ -121,35 +129,75 @@ def create_vector_store(documents=None):
 
 # ---------- Generate Answer ----------
 def generate_answer(query, retriever, tokenizer, model):
+    # --- 1. Retrieve relevant documents ---
     docs = retriever.similarity_search(query, k=10)
-    context = "\n\n---\n\n".join(doc.page_content.strip() for doc in docs if doc.page_content.strip())
 
-    prompt = f"""[INST] You are an assistant specialized in answering questions about Katy ISD based only on the provided context.
-If the answer is not in the context, say "I do not have enough information to answer that question."
-Do not make up information.
+    if not docs:
+        return (
+            "I do not have enough information to answer that question from the Katy ISD documents.",
+            []
+        )
 
-Context:
-{context}
+    # Merge documents into context
+    context = "\n\n---\n\n".join(doc.page_content.strip() for doc in docs  if doc.page_content.strip())
 
-Question:
-{query}
-[/INST]"""
+    # --- 2. Detect if the user wants bullet points ---
+    wants_bullets = any(
+        phrase in query.lower()
+        for phrase in ["bullet", "bulleted", "list", "make it a list", "make it bullets"]
+    )
 
+    bullet_instruction = ""
+    if wants_bullets:
+        bullet_instruction = (
+            "\nFormat your entire answer as clean, separate bullet points. "
+            "Each bullet should begin with a dash (-) or asterisk (*)."
+        )
+
+    # --- 3. Construct the prompt ---
+    prompt = f"""[INST]
+        You are an assistant specialized in answering questions about Katy ISD.
+
+        Use ONLY the following context to answer the question.
+        If the answer is not in the context, say:
+        "I do not have enough information to answer that question."
+
+        Do not make up facts. Do not guess.
+        Keep answers clear and structured.
+        {bullet_instruction}
+
+        Context:
+        {context}
+
+        Question:
+        {query}
+        [/INST]"""
+
+    # --- 4. Run LLM ---
     try:
         inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+
         outputs = model.generate(
             **inputs,
             max_new_tokens=512,
-            temperature=0.7,
+            temperature=0.2,       # lower temperature = less hallucination, better structure
             do_sample=True,
+            pad_token_id=tokenizer.eos_token_id,  # avoid padding warnings
             eos_token_id=tokenizer.eos_token_id,
         )
+
         decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        answer = decoded.split('[/INST]', 1)[1].strip() if '[/INST]' in decoded else decoded.strip()
+
+        # Extract answer after [/INST]
+        answer = decoded.split('[/INST]', 1)[-1].strip()
+
         return answer, docs
+
     except Exception as e:
         st.error(f"Error generating response: {e}")
         return "I'm sorry, I couldn't generate a response.", docs
+
+
 
 # ---------- Load Resources ----------
 tokenizer_llm, model_llm = load_llm()
@@ -180,7 +228,7 @@ for user, bot, srcs in reversed(st.session_state.chat_history):
 st.markdown("""
     <hr>
     <div style='text-align:center; font-size:0.9rem; color:gray; padding:10px 0;'>
-        🚀 Built by a passionate high schooler using Streamlit, LangChain, and HuggingFace 🧠
+        🚀 Built by Ronan Parashar, a passionate high schooler using Streamlit, LangChain, and HuggingFace 🧠
     </div>
 """, unsafe_allow_html=True)
 
